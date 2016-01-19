@@ -6,34 +6,36 @@
 ## makeCacheMatrix
 
 makeCacheMatrix <- function(x) {
-        m <-NULL
-        #set matrix
-        set <- function(y) {
-                x<<-y
-                m<<-NULL
-        }
-        get <-function () x                                             
-        setmat <- function (x) <-(data=1:4, nrow=2) m <<- mat           ## maybe use x$set
-        getmat <- function () m                                         ## maybe use 
-        list(set=set, get=get, setmat=setmat, getmat=getmat)
+  m <-NULL
+  #set matrix
+  set <- function(y) {
+    x<<-y
+    m<<-NULL
+  }
+  get <-function () x                                             
+  setmat. <- function (x) <-(data=1:4, nrow=2) 
+  mat.$get() 
+  m <<- mat.           
+  getmat <- function () m                                         
+  list(set=set, get=get, setmat.=setmat., getmat.=getmat.)
 }
 
 
 ## cacheSolve:
 
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
-        m<- x$getmat ()
-        ## Cache it
-        if(!is.null(m)) {
-                message ("getting ached data")
-                return (m)
-        }# Notice that the mean is returned from cache this time.
-        #if m is NULL then get 
-                data<- x$get()
-                m<- mat(data,...)
-                #setmat(m)
-                m
-        #inverse it
-                solve(m) # inverse
+  ## Return a matrix that is the inverse of 'x'
+  m<- x$getmat ()
+  ## Cache it
+  if(!is.null(m)) {
+    message ("getting ached data")
+    return (m)
+  }# Notice that the mean is returned from cache this time.
+  #if m is NULL then get 
+  data<- x$get()
+  m<- mat.(data,...)
+  #setmat(m)
+  m
+  #inverse it
+  solve(m) # inverse
 }
