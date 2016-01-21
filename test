@@ -3,7 +3,25 @@
 ## cacheSolve: This function computes the inverse of the special "matrix" returned by makeCacheMatrix above. 
 ## If the inverse has already been calculated (and the matrix has not changed), then the cachesolve should retrieve the inverse from the cache.
 
+#part 1
+##inputs for square matrix
+x <- rnorm(16) #data
+r = 4 #rows
+c = 4 #columns
+##function
+f<-function(x) {
+          matrix(x, r, c)          }
+      f(x)
+
+#part 2: inverse above sq. matrix
+g<-function(y){
+          solve(f(x))
+          }
+      g(y)
+
+
 ## makeCacheMatrix
+
 
 makeCacheMatrix <- function(x) {
   m <-NULL
