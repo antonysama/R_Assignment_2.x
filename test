@@ -3,57 +3,26 @@
 ## cacheSolve: This function computes the inverse of the special "matrix" returned by makeCacheMatrix above. 
 ## If the inverse has already been calculated (and the matrix has not changed), then the cachesolve should retrieve the inverse from the cache.
 
-#part 1
-##inputs for square matrix
-x <- rnorm(16) #data
-r = 4 #rows
-c = 4 #columns
-##function
-f<-function(x) {
-          matrix(x, r, c)          }
-      f(x)
+# Creating the matrix to be passed down
+d<-rnorm(16) #data for the matrix
+r = 4 #rows in matrix
+c = 4 #columns 
 
-#part 2: inverse above sq. matrix
-g<-function(y){
-          solve(f(x))
-          }
-      g(y)
-
-
-## makeCacheMatrix
-
-
-makeCacheMatrix <- function(x) {
-  m <-NULL
-  #set matrix
-  set <- function(y) {
-    x<<-y
-    m<<-NULL
-  }
-  get <-function () x                                             
-  setmat. <- function (x) <-(data=1:4, nrow=2) 
-  mat.$get() 
-  m <<- mat.           
-  getmat <- function () m                                         
-  list(set=set, get=get, setmat.=setmat., getmat.=getmat.)
+# Making the matrix
+f<-function(y) {
+    ##make matrix
+    y<-matrix(d,r,c)
 }
+m<-f(y)##caching the matrix
+m ## this prints out the matrix
 
-
-## cacheSolve:
-
-cacheSolve <- function(x, ...) {
-  ## Return a matrix that is the inverse of 'x'
-  m<- x$getmat ()
-  ## Cache it
-  if(!is.null(m)) {
-    message ("getting ached data")
-    return (m)
-  }# Notice that the mean is returned from cache this time.
-  #if m is NULL then get 
-  data<- x$get()
-  m<- mat.(data,...)
-  #setmat(m)
-  m
-  #inverse it
-  solve(m) # inverse
+#Inverting cached matrix
+g<-function(m) {
+    if(!is.null (m)) {
+    message("getting cached data")
+    solve(m)
+    }
+    y<-matrix(d,r,c)
+    solve(y)
 }
+g(m) #$ this prints out the inverse matrix
