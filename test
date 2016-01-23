@@ -25,4 +25,4 @@ g<-function(m) {
     y<-matrix(d,r,c)
     solve(y)
 }
-g(m) #$ this prints out the inverse matrix
+g(m) ## this prints out the inverse matrix
